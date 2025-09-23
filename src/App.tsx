@@ -25,7 +25,7 @@ function TeacherOnly({ children }: { children: React.ReactNode }) {
   return <>{children}</>;
 }
 
-// Observa a rota atual e ajusta o document.title
+
 function TitleWatcher() {
   const location = useLocation();
   useEffect(() => {
@@ -52,18 +52,11 @@ export default function App() {
       <TitleWatcher />
       <Layout>
         <Routes>
-          {/* root */}
           <Route path="/" element={<RootRedirect />} />
-
-          {/* auth */}
           <Route path="/login" element={<LoginPage />} />
-
-          {/* público autenticado (aluno/professor) */}
           <Route path="/posts" element={<ProtectedRoute><PostsListPage /></ProtectedRoute>} />
           <Route path="/posts-table" element={<ProtectedRoute><PostsTablePage /></ProtectedRoute>} />
           <Route path="/posts/:id" element={<ProtectedRoute><PostReadPage /></ProtectedRoute>} />
-
-          {/* somente professor */}
           <Route
             path="/posts/new"
             element={
@@ -94,8 +87,6 @@ export default function App() {
               </ProtectedRoute>
             }
           />
-
-          {/* fallback */}
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </Layout>

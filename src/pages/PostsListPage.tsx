@@ -62,7 +62,7 @@ export default function PostsListPage() {
           display: 'flex',
           gap: 12,
           alignItems: 'center',
-          flexWrap: 'wrap', // responsivo
+          flexWrap: 'wrap', 
         }}
       >
         <h1 style={{ margin: 0 }}>Posts</h1>
@@ -79,7 +79,7 @@ export default function PostsListPage() {
             display: 'flex',
             gap: 8,
             width: 'min(460px, 100%)',
-            flexWrap: 'wrap', // responsivo
+            flexWrap: 'wrap',
           }}
         >
           <Input

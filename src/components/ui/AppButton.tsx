@@ -8,7 +8,7 @@ type Size = 'md' | 'lg';
 type BaseProps = {
   variant?: Variant;
   size?: Size;
-  leftIcon?: ReactNode; // pode ser emoji ou SVG
+  leftIcon?: ReactNode;
   children: ReactNode;
 };
 

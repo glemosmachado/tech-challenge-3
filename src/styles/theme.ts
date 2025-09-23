@@ -1,13 +1,11 @@
 export const theme = {
   colors: {
-    // base
     bg: '#0b0f19',          
     surface: '#0f1526',     
     border: '#1b2238',
     text: '#e6e9f2',
     subtext: '#9aa3b2',
 
-    // acentos (neon-ish)
     primary: '#7c5cff',
     primaryHover: '#6b4df3',
     secondary: '#22d3ee',
