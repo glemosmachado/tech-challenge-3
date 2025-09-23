@@ -34,3 +34,31 @@ Foram aplicados conceitos de **React com TypeScript**, **Vite**, **React Router 
 - [Github](https://github.com/)
 - [GithubActions](https://github.com/)
 
+Fluxo da aplicação:
+1. Usuário acessa a tela de login e seleciona o perfil (estudante ou professor).
+2. Caso professor, ganha acesso às rotas de criação, edição e administração.
+3. Posts são listados em cards ou tabela, consumindo a API do back-end.
+4. Cada post pode ser visualizado em detalhe e, se autorizado, editado ou removido.
+
+---
+
+## Setup do projeto
+
+### Rodando localmente
+
+# instalar dependências
+npm install
+
+# rodar ambiente de desenvolvimento
+npm run dev
+
+# aplicação disponível em 
+http://localhost:5173
+
+# construir imagem
+docker build -t tech-challenge-3 .
+
+# rodar container
+docker run -p 8080:80 tech-challenge-3
+
+# actions executará após deploy
