@@ -61,4 +61,4 @@ docker build -t tech-challenge-3 .
 # rodar container
 docker run -p 8080:80 tech-challenge-3
 
-# actions executará após deploy
+# actions executará após deploy.
