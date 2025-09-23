@@ -8,13 +8,20 @@ export default function PostsListPage() {
   const [q, setQ] = useState('');
   const [loading, setLoading] = useState(true);
 
+  // Função para carregar posts (memoizada para não recriar a cada render)
   const load = useCallback(async () => {
     setLoading(true);
-    const data = q ? await PostsApi.search(q) : await PostsApi.list();
-    setPosts(data);
-    setLoading(false);
+    try {
+      const data = q ? await PostsApi.search(q) : await PostsApi.list();
+      setPosts(data);
+    } catch (error) {
+      console.error('Erro ao carregar posts:', error);
+    } finally {
+      setLoading(false);
+    }
   }, [q]);
 
+  // Carrega quando o componente monta ou quando "q" muda
   useEffect(() => {
     load();
   }, [load]);
@@ -33,17 +40,16 @@ export default function PostsListPage() {
         <input
           placeholder="Buscar por palavra-chave"
           value={q}
-          onChange={(e) => setQ(e.target.value)}
+          onChange={e => setQ(e.target.value)}
         />
-        <button type="submit" style={{ marginLeft: 8 }}>
-          Buscar
-        </button>
+        <button type="submit" style={{ marginLeft: 8 }}>Buscar</button>
       </form>
+
       {posts.length === 0 ? (
         <p>Nenhum post encontrado.</p>
       ) : (
         <ul>
-          {posts.map((p) => (
+          {posts.map(p => (
             <li key={p._id} style={{ marginBottom: 12 }}>
               <Link to={`/posts/${p._id}`} style={{ fontWeight: 600 }}>
                 {p.title}
