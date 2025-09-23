@@ -1,11 +1,10 @@
 import axios from 'axios';
 import { auth } from '../lib/auth';
 
-export const http = axios.create({
-  baseURL: import.meta.env.VITE_API_URL
-});
+const baseURL = import.meta.env.VITE_API_URL || 'https://tech-challenge-2-d1kb.onrender.com';
+console.log('BaseURL efetiva =', baseURL);
 
-console.log('VITE_API_URL =', import.meta.env.VITE_API_URL);
+export const http = axios.create({ baseURL });
 
 http.interceptors.request.use((config) => {
   const role = auth.getRole();
