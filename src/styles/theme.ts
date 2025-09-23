@@ -1,16 +1,25 @@
 export const theme = {
   colors: {
-    bg: '#0f172a',
-    card: '#111827',
-    text: '#e5e7eb',
-    subtext: '#94a3b8',
-    primary: '#60a5fa',
-    primaryHover: '#3b82f6',
-    border: '#1f2937',
+    // base
+    bg: '#0b0f19',          
+    surface: '#0f1526',     
+    border: '#1b2238',
+    text: '#e6e9f2',
+    subtext: '#9aa3b2',
+
+    // acentos (neon-ish)
+    primary: '#7c5cff',
+    primaryHover: '#6b4df3',
+    secondary: '#22d3ee',
+    danger: '#f43f5e',
     success: '#22c55e',
-    danger: '#ef4444',
   },
-  radius: '16px',
+  radius: {
+    md: '12px',
+    lg: '16px',
+    xl: '20px',
+    pill: '999px',
+  },
   shadow: '0 10px 30px rgba(0,0,0,.35)',
   mq: {
     sm: '@media (max-width: 480px)',
